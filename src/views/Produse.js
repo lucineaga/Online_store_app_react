@@ -11,7 +11,7 @@ function Produse() {
 	const getProdus = async () => {
 		const responseData = await fetch("https://fakestoreapi.com/products");
 		const apiProdus = await responseData.json();
-		console.log("produsul e ", apiProdus);
+
 		setProdus(apiProdus);
 	};
 
@@ -22,8 +22,8 @@ function Produse() {
 	const filterByInput = (arrayProducts, searchValue) => {
 		if (searchValue === null) return arrayProducts;
 
-		return arrayProducts.filter((produs) => {
-			return produs.name.toLowerCase().includes(searchValue.toLowerCase());
+		return arrayProducts.filter((elem) => {
+			return elem.title.toLowerCase().includes(searchValue.toLowerCase());
 		});
 	};
 
@@ -52,7 +52,7 @@ function Produse() {
 									{produs.slice(0, 6).map((prod, index) => {
 										return (
 											<Product
-												prod={filterByInput(produs, inputValue)}
+												prod={filterByInput(prod, inputValue)}
 												key={"prod_" + index}
 											/>
 										);

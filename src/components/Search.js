@@ -12,7 +12,7 @@ function Search({ handleSearch }) {
 						setInputSearch(e.target.value);
 					}}
 					type='text'
-					placeholder='Search'
+					placeholder='Search...'
 				/>
 
 				<button
