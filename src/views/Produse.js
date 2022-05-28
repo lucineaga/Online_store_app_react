@@ -22,9 +22,15 @@ function Produse() {
 	const filterByInput = (arrayProducts, searchValue) => {
 		if (searchValue === null) return arrayProducts;
 
-		return arrayProducts.filter((elem) => {
-			return elem.title.toLowerCase().includes(searchValue.toLowerCase());
-		});
+		const filteredComp = arrayProducts.filter(
+			(elem) =>
+				elem.title === "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+		);
+		return filteredComp;
+		console.log(filteredComp);
+		console.log("dupa filtrare", arrayProducts);
+
+		// return elem.title.toLowerCase().includes(searchValue.toLowerCase());
 	};
 
 	useEffect(() => {
