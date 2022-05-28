@@ -22,13 +22,12 @@ function Produse() {
 	const filterByInput = (arrayProducts, searchValue) => {
 		if (searchValue === null) return arrayProducts;
 
-		const filteredComp = arrayProducts.filter(
-			(elem) =>
-				elem.title === "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+		return console.log(
+			arrayProducts.filter(
+				(elem) =>
+					elem.title === "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+			)
 		);
-		return filteredComp;
-		console.log(filteredComp);
-		console.log("dupa filtrare", arrayProducts);
 
 		// return elem.title.toLowerCase().includes(searchValue.toLowerCase());
 	};
@@ -55,9 +54,11 @@ function Produse() {
 						<Row>
 							{produs ? (
 								<>
+									{/* Here I list only six product from entire API */}
 									{produs.slice(0, 6).map((prod, index) => {
 										return (
 											<Product
+												// here I do a filter over function filterByInput
 												prod={filterByInput(prod, inputValue)}
 												key={"prod_" + index}
 											/>

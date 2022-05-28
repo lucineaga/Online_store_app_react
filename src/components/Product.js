@@ -1,8 +1,8 @@
-import { Col, Button } from "reactstrap";
+import { Col } from "reactstrap";
 
 function Product({ prod }) {
 	return (
-		<Col xs='12' md='4' marginBottom='20px'>
+		<Col xs='12' md='4'>
 			<img
 				src={prod.image}
 				style={{
