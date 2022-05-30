@@ -6,7 +6,7 @@ import Search from "../components/Search";
 
 function Produse() {
 	const [produs, setProdus] = useState(null);
-	const [inputValue, setInputValue] = useState(null);
+	const [inputValue, setInputValue] = useState("");
 
 	const getProdus = async () => {
 		const responseData = await fetch("https://fakestoreapi.com/products");
@@ -37,42 +37,45 @@ function Produse() {
 	}, []);
 
 	return (
-		<div className='product_page'>
-			<div className='product_page_left'>
-				<ul>
-					<li>Accesories</li>
-					<li>Fashion</li>
-					<li>MEn</li>
-				</ul>
-			</div>
-
-			<div className='product_page_right'>
-				<Search handleSearch={onSearch} />
-
-				<div className='products_list'>
-					<Container>
-						<Row>
-							{produs ? (
-								<>
-									{/* Here I list only six product from entire API */}
-									{produs.slice(0, 6).map((prod, index) => {
-										return (
-											<Product
-												// here I do a filter over function filterByInput
-												prod={filterByInput(prod, inputValue)}
-												key={"prod_" + index}
-											/>
-										);
+		<Container>
+			<div className='product_page'>
+				<Col xs='12' md='6'>
+					<div className='product_page_left'>
+						<h3>Product categories</h3>
+						<ul>
+							<li>Accesories</li>
+							<li>Fashion</li>
+							<li>MEn</li>
+						</ul>
+					</div>
+				</Col>
+				<Col xs='12' md='6' className='product_page_right'>
+					{/* <div className='product_page_right'> */}
+					<Row className='class_search'>
+						<Search handleSearch={onSearch} />
+					</Row>
+					{/* <div className='products_list'> */}
+					<Row className='products_list'>
+						{produs ? (
+							<>
+								{produs
+									.filter((elem) =>
+										elem.title.toLowerCase().includes(inputValue.toLowerCase())
+									)
+									.slice(0, 8)
+									.map((prod, index) => {
+										return <Product prod={prod} key={"prod_" + index} />;
 									})}
-								</>
-							) : (
-								<div>Loading ...</div>
-							)}
-						</Row>
-					</Container>
-				</div>
+							</>
+						) : (
+							<div>Loading ...</div>
+						)}
+					</Row>
+					{/* </div> */}
+					{/* </div> */}
+				</Col>
 			</div>
-		</div>
+		</Container>
 	);
 }
 

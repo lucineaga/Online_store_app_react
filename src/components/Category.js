@@ -1,8 +1,9 @@
 import { Col, Button } from "reactstrap";
+import { Link } from "react-router-dom";
 
 function Category({ cat }) {
 	return (
-		<Col xs='12' md='4' marginBottom='30px'>
+		<Col xs='12' md='4' marginbottom='50px'>
 			<img
 				src='https://cdn.shopify.com/s/files/1/1573/5553/files/banner1_360x.jpg?v=1522250209'
 				style={{
@@ -13,7 +14,9 @@ function Category({ cat }) {
 				}}
 			/>
 			<h3>{cat}</h3>
-			<Button>Go to products</Button>
+			<Link to='/Produse'>
+				<Button>Go to Products</Button>
+			</Link>
 		</Col>
 	);
 }

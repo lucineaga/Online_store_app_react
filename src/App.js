@@ -10,7 +10,7 @@ function App() {
 		<div>
 			<BrowserRouter>
 				<NavBar />
-				<div style={{ marginTop: "60px", marginBottom: "40px" }}>
+				<div style={{ marginTop: "60px" }}>
 					<Routes>
 						<Route path='/' element={<Home />}></Route>
 						<Route path='/Produse' element={<Produse />}></Route>
