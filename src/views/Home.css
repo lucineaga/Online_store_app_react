@@ -1,0 +1,15 @@
+.TrendingProductTitle {
+    width:100%;
+    margin-left:auto;
+    margin-top:20px;
+    font-size: 45px;
+    text-align: center;
+}
+
+.TrendingProductPara {
+    width: 100%;
+    margin-left: auto;
+    margin-top: 20px;
+    font-size: 35px;
+    text-align: center;
+}

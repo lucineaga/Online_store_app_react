@@ -1,11 +1,29 @@
 img {
     height: 500px;
+    width:50%;
+    margin:auto;
+
 }
 
 .ProductInfo {
-    width:200px;
-    height:400px;
-    margin-top:30px;
-    color: red;
     
+    color: rgb(41, 39, 39);  
+} 
+
+.ProductInfoPara{
+    color:black;
+}
+
+.carousel-indicators button {
+    color: blue;
+}
+@media (max-width:576px) {
+    .ProductInfoPara {
+        display:none;
+    }
+    img {
+        width:40%;
+        height:380px;
+    }
+
 }

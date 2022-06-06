@@ -28,8 +28,6 @@ function Produse() {
 					elem.title === "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
 			)
 		);
-
-		// return elem.title.toLowerCase().includes(searchValue.toLowerCase());
 	};
 
 	useEffect(() => {
